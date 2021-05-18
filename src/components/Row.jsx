@@ -29,31 +29,29 @@ const ActionBtn = styled.div`
   `}
 `;
 
-export default class Row extends React.Component {
-  render() {
-    return(
-      <React.Fragment>
-        <tr>
-          <td className="person-checkbox">
-            <Checkbox 
-              onCheckChange={(event) => this.props.onCheckStateChanged(event)} 
-              checked={this.props.checked}
-            />
-          </td>
-          <td className="person-number">{this.props.id}</td>
-          <td className="person-name">{this.props.person.full_name}</td>
-          <td className="person-age">{this.props.person.age}</td>
-          <td className="person-height">{this.props.person.height}</td>
-          <td className="person-weight">{this.props.person.weight}</td>
-          <td className="person-salary">{this.props.person.salary}</td>
-          <td>
-            <ActionButtonsWrap>
-              <ActionBtn edit/>
-              <ActionBtn remove onClick={this.props.onRemove} />
-            </ActionButtonsWrap>
-          </td>
-        </tr>
-      </React.Fragment>
-    );
-  }
+export default function Row(props) {
+  return(
+    <React.Fragment>
+      <tr>
+        <td className="person-checkbox">
+          <Checkbox 
+            onCheckChange={(event) => props.onCheckStateChanged(event)} 
+            checked={props.checked}
+          />
+        </td>
+        <td className="person-number">{props.id}</td>
+        <td className="person-name">{props.person.full_name}</td>
+        <td className="person-age">{props.person.age}</td>
+        <td className="person-height">{props.person.height}</td>
+        <td className="person-weight">{props.person.weight}</td>
+        <td className="person-salary">{props.person.salary}</td>
+        <td>
+          <ActionButtonsWrap>
+            <ActionBtn edit/>
+            <ActionBtn remove onClick={props.onRemove} />
+          </ActionButtonsWrap>
+        </td>
+      </tr>
+    </React.Fragment>
+  );
 }

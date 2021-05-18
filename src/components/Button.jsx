@@ -32,12 +32,10 @@ const DelBtn = styled.div`
   `}
 `;
 
-export default class Button extends React.Component {
-  render() {
-    return (
-      <DelBtn disabled={this.props.disabled} onClick={this.props.onDeleteClick}>
-        Удалить выбранные
-      </DelBtn>
-    );
-  }
+export default function Button(props) {
+  return (
+    <DelBtn disabled={props.disabled} onClick={props.onDeleteClick}>
+      Удалить выбранные
+    </DelBtn>
+  );
 }

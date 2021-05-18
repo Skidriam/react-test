@@ -41,16 +41,14 @@ const CheckboxLabel = styled.label`
   `}
 `;
 
-export default class Checkbox extends React.Component {
-  render() {
-    return(
-      <CheckboxLabel checked={this.props.checked}>
-        <input 
-          type="checkbox" 
-          onChange={(event) => {this.props.onCheckChange(event)}} 
-        />
-        <span className="checkmark"></span>
-      </CheckboxLabel>
-    );
-  }
+export default function Checkbox(props) {
+  return(
+    <CheckboxLabel checked={props.checked}>
+      <input 
+        type="checkbox" 
+        onChange={(event) => {props.onCheckChange(event)}} 
+      />
+      <span className="checkmark"></span>
+    </CheckboxLabel>
+  );
 }

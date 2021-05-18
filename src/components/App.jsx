@@ -72,12 +72,10 @@ const Styles = styled.div`
 
 `;
 
-export default class App extends React.Component {
-  render() {
-    return (
+export default function App(props) {
+  return (
       <Styles>
         <Table />
       </Styles>
     );
-  }
 }
